@@ -176,7 +176,6 @@ pycparser==2.21
 pydantic==1.10.7
 pydeck==0.8.0
 pydot==2.0.0
-pygame==2.1.2
 Pygments==2.13.0
 Pympler==1.0.1
 pyparsing==3.0.9
