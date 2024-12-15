@@ -45,11 +45,10 @@ CORS(app)
 def hello():
     return jsonify({"key" : "home page value"})
 
-@app.route("/predict", methods=["GET"])
+@app.route("/predict", methods=["POST"])
 def predict():
     data = request.get_json()  # Get the message sent from React
-    query = request.args.get('q')
-    message = query  # Extract the message
+    message = data['message']  # Extract the message
 
     # Process the message
     bag = preprocess_input(message)
