@@ -4,8 +4,10 @@ from flask_cors import CORS
 import nltk
 try:
     nltk.data.find('tokenizers/punkt')
+    nltk.data.find('corpora/wordnet')
 except LookupError:
     nltk.download('punkt')
+    nltk.download('wordnet')
 
 import numpy as np
 from tensorflow.keras.models import load_model
