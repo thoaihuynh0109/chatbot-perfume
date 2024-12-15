@@ -12,6 +12,11 @@ try:
 except LookupError:
     nltk.download('wordnet')
 
+try:
+    nltk.data.find('corpora/omw-1.4')
+except LookupError:
+    nltk.download('omw-1.4')
+
 import numpy as np
 from tensorflow.keras.models import load_model
 import pickle
