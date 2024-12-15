@@ -2,6 +2,11 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import nltk
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
 import numpy as np
 from tensorflow.keras.models import load_model
 import pickle
