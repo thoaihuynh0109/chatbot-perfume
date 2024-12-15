@@ -1,5 +1,6 @@
 # app.py (Flask backend API)
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import nltk
 import numpy as np
 from tensorflow.keras.models import load_model
@@ -24,6 +25,7 @@ def preprocess_input(message):
     return np.array([bag])
 
 app = Flask(__name__)
+CORS(app)
 @app.route("/", methods = ['GET', 'POST'])
 def hello():
     return jsonify({"key" : "home page value"})
