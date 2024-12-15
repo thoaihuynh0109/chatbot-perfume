@@ -7,8 +7,6 @@ import pickle
 import json
 from nltk.stem import WordNetLemmatizer
 
-# Initialize Flask app
-app = Flask(__name__)
 
 
 # Load model and other necessary files
@@ -24,6 +22,11 @@ def preprocess_input(message):
     user_input = [lemmatizer.lemmatize(word.lower()) for word in user_input]
     bag = [1 if word in user_input else 0 for word in words]
     return np.array([bag])
+
+app = Flask(__name__)
+@app.route("/", methods = ['GET', 'POST'])
+def hello():
+    return jsonify({"key" : "home page value"})
 
 @app.route("/predict", methods=["POST"])
 def predict():
