@@ -4,9 +4,12 @@ from flask_cors import CORS
 import nltk
 try:
     nltk.data.find('tokenizers/punkt')
-    nltk.data.find('corpora/wordnet')
 except LookupError:
     nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
     nltk.download('wordnet')
 
 import numpy as np
