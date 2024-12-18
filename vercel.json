@@ -1,14 +1,8 @@
 {
-  "version": 2,
-  "functions": {
-    "app.py": {
-      "runtime": "python@3.10"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/app.py"
-    }
-  ]
+  "builds": [
+    { "src": "app.py", "use": "@vercel/python" }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "/app.py" }
+  ] 
 }
