@@ -1,5 +1,14 @@
 {
-  "redirects": [
-    { "source": "/", "destination": "/app.py" }
-  ] 
+  "version": 2,
+  "functions": {
+    "app.py": {
+      "runtime": "python@3.10"
+    }
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/app.py"
+    }
+  ]
 }
