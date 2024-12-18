@@ -2,7 +2,8 @@
   "version": 2,
   "functions": {
     "api/app.py": {
-      "runtime": "python@3.10"
+     "runtime": "vercel-python@3.10",
+      "memory": 1024
     }
   },
   "routes": [
