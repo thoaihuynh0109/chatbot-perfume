@@ -3,6 +3,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[scripts]
+start = "python api/index.py"
+
 [packages]
 tensorflow-cpu = "==2.18.0"
 absl-py = "==2.1.0"
